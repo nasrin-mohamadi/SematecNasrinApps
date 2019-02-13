@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SematecNasrinApps</string>
+    <string name="mar">MAR</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="ok">ok</string>
+    <string name="task1">Task1</string>
+    <string name="task2">Task2</string>
 </resources>

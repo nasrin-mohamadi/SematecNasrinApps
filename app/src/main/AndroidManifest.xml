@@ -9,6 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".RecycleViewActivity">
+
+        </activity>
+        <activity android:name=".ChangeInfoActivity" />
+        <activity android:name=".ShowInfoActivity" />
+        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".SayValidActivity" />
+        <activity android:name=".SubmitActivity" />
+        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
