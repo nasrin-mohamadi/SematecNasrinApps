@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.sematec.Nasrin.Apps">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity"></activity>
-        <activity android:name=".RecycleViewActivity">
+        <activity android:name=".HttpConnectionActivity">
 
         </activity>
+        <activity android:name=".ThreadForInternetActivity" />
+        <activity android:name=".ThreadActivity">
+
+        </activity>
+        <activity android:name=".DrawerActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".RecycleViewActivity" />
         <activity android:name=".ChangeInfoActivity" />
         <activity android:name=".ShowInfoActivity" />
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".UserActivity" />
         <activity android:name=".SayValidActivity" />
         <activity android:name=".SubmitActivity" />
         <activity android:name=".SecondActivity" />
@@ -26,6 +34,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
