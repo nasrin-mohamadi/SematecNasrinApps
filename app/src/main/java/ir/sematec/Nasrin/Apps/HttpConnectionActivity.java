@@ -3,6 +3,7 @@ package ir.sematec.Nasrin.Apps;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ public class HttpConnectionActivity extends AppCompatActivity {
     String CityTimesURL;
     Button btnShowTimes;
 
+    static final String Cityname="tehran";
+
     static final String TimesURL = "http://api.aladhan.com/v1/timingsByCity?city=";
     static final String CountryName = "&country=Iran&method=8";
 
@@ -32,21 +35,21 @@ public class HttpConnectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http_connection);
 
-        txtSunrise = findViewById(R.id.txtSunrise);
-        txtAsr=findViewById(R.id.txtAsr);
-        txtMaghreb=findViewById(R.id.txtMaghreb);
-        btnShowTimes=findViewById(R.id.btnShowTimes);
+        //txtSunrise = findViewById(R.id.txtSunrise);
+        //txtAsr=findViewById(R.id.txtAsr);
+        //txtMaghreb=findViewById(R.id.txtMaghreb);
+        //btnShowTimes=findViewById(R.id.btnShowTimes);
 
-        btnShowTimes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+           // btnShowTimes.setOnClickListener(new View.OnClickListener() {
+           // @Override
+           // public void onClick(View v) {
 
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
 
                         try {
-                            CityTimesURL = TimesURL + edtCityName.getText()  + CountryName;
+                            CityTimesURL = TimesURL + Cityname + CountryName;
                             URL obj = new URL(CityTimesURL);
 
                             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -66,14 +69,20 @@ public class HttpConnectionActivity extends AppCompatActivity {
                                     response.append(inputLine);
                                 }
 
+                                System.out.println(response.toString());
+
                                 JSONObject objResponse = new JSONObject(response.toString());
                                 String strData = objResponse.getString("data");
                                 JSONObject objData = new JSONObject(strData);
                                 String strTimings = objData.getString("timings");
                                 JSONObject objTimings = new JSONObject(strTimings);
-                                txtSunrise.setText(objTimings.getString("Sunrise"));
-                                txtAsr.setText(objTimings.getString("Asr"));
-                                txtMaghreb.setText(objTimings.getString("Maghrib"));
+                               // txtSunrise.setText(objTimings.getString("Sunrise"));
+                                //txtAsr.setText(objTimings.getString("Asr"));
+                                String s=objTimings.getString("Maghrib");
+                                //txtMaghreb.setText(s);
+
+
+                                Log.d("MAGHRIB",s);
 
 
                             }
@@ -86,8 +95,8 @@ public class HttpConnectionActivity extends AppCompatActivity {
 
 
 
-            }
-        });
+          //  }
+        //});
 
 
     }

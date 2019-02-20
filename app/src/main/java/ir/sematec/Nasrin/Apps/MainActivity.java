@@ -65,6 +65,42 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button btnTask81=findViewById(R.id.btnTaskS81);
+        btnTask81.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AsyncHttpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnTask82=findViewById(R.id.btnTaskS82);
+        btnTask82.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,PermissionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnTask83=findViewById(R.id.btnTaskS83);
+        btnTask83.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnTask84=findViewById(R.id.btnTaskS84);
+        btnTask84.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,HandlerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

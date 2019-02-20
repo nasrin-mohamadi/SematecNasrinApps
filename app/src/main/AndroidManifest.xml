@@ -3,6 +3,7 @@
     package="ir.sematec.Nasrin.Apps">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HttpConnectionActivity">
+        <activity android:name=".HandlerActivity">
 
         </activity>
+        <activity android:name=".MenuActivity">
+
+        </activity>
+        <activity android:name=".PermissionActivity"></activity>
+        <activity android:name=".AsyncHttpActivity" />
+        <activity android:name=".HTTPConnetActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".HttpConnectionActivity" />
         <activity android:name=".ThreadForInternetActivity" />
-        <activity android:name=".ThreadActivity">
-
-        </activity>
+        <activity android:name=".ThreadActivity" />
         <activity android:name=".DrawerActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".RecycleViewActivity" />
@@ -27,15 +34,20 @@
         <activity android:name=".SayValidActivity" />
         <activity android:name=".SubmitActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
+        <receiver android:name=".TestBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
